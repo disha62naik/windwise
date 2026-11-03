@@ -6,7 +6,7 @@ It is a decision-support tool. It does not calculate an optimal procurement posi
 
 ## Live application
 - **Frontend (Vercel):** https://windwise-kappa.vercel.app
-- **Backend API (Render):** https://windwise-1mjb.onrender.com (health check: `/api/health`, API docs: `/docs`)
+- **Backend API (Render):** https://windwise-imjb.onrender.com/api/health (health check: `/api/health`, API docs: `/docs`)
 
 > The backend runs on Render's free tier. It sleeps after about 15 minutes without traffic, so the **first request can take around a minute** while it wakes up and loads data from Elexon. Later requests are faster because source data is cached in memory.
 
@@ -22,7 +22,7 @@ It is a decision-support tool. It does not calculate an optimal procurement posi
 - **Methodology page:** data sources, selection logic, formulas and limitations.
 
 ## Data sources and field mapping
-Base URL: `https://data.elexon.co.uk/bmrs/api/v1` (no API key needed).
+Base URL: `https://data.elexon.co.uk/bmrs/api/v1/datasets/FUELHH` (no API key needed).
 
 | Dataset | Endpoint | Fields used |
 |---|---|---|
@@ -93,7 +93,6 @@ The backend does all the analysis. The frontend only displays the results.
 ├── .github/workflows/ci.yml     # backend + frontend checks
 ├── docs/
 │   ├── TEST_PLAN.md             # automated + manual test cases
-│   ├── demo-script.md           # video outline
 │   └── results/                 # generated results reports
 ├── e2e/windwise.spec.ts         # Playwright tests (API mocked)
 ├── backend/
